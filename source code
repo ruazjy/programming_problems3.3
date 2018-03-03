@@ -1,0 +1,33 @@
+问题一
+#台阶问题 n阶 青蛙一次1阶或者2阶
+func=lambda n:n if n<=2 else func(n-1)+func(n-2)
+
+问题二
+#台阶问题改 n阶 青蛙一次1阶 2阶 ... 最多n阶
+func=2**(n-1)
+
+问题三
+#矩形问题 用2*1的矩形填充2*n的矩形 
+func=lambda n:n if n<=2 else func(n-1)+func(n-2)
+
+问题四
+#杨氏矩阵 step-wise线性搜索算法 判断目标是否在矩阵中
+def searchMatrix(matrix,target):
+  if matrix==[]:
+    return False
+  m=len(matrix)
+  n=len(matrix[0])
+  x=0
+  y=n-1
+  while x<m and y>-1:
+    if target==matrix[x][y]:
+      return True
+    if target>matrix[x][y]:
+      x+=1
+      continue
+    if target<matrix[x][y]:
+      y-=1
+  return False
+      
+
+
